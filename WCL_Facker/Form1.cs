@@ -67,7 +67,7 @@ namespace WCL_Facker
         private void btnFacker_Click(object sender, EventArgs e)
         {
             double totalSeconds = this.totalTimeSpan.TotalSeconds;
-            int divider = 3;
+            int divider = int.Parse(this.tbxDivider.Text);
             for (int i = 0; i < this.lineObjs.Count; i++)
             {
                 DateTime dt = this.lineObjs[i].DT;
@@ -78,7 +78,7 @@ namespace WCL_Facker
             string all = "";
             for (int i = 0; i < lineObjs.Count; i++)
             {
-                all = all + lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " +lineObjs[i].ACT + Environment.NewLine;
+                all = all + lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " + lineObjs[i].ACT + Environment.NewLine;
             }
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
@@ -91,6 +91,32 @@ namespace WCL_Facker
                     }
                     MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void btnM_Click(object sender, EventArgs e)
+        {
+            int divider = int.Parse(this.tbxDivider.Text);
+            if (divider <= 2)
+            {
+                ;
+            }
+            else
+            {
+                this.tbxDivider.Text = (divider - 1).ToString();
+            }
+        }
+
+        private void btnP_Click(object sender, EventArgs e)
+        {
+            int divider = int.Parse(this.tbxDivider.Text);
+            if (divider >= int.MaxValue)
+            {
+                ;
+            }
+            else
+            {
+                this.tbxDivider.Text = (divider + 1).ToString();
             }
         }
     }

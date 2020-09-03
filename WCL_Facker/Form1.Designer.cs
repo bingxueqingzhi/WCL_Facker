@@ -32,6 +32,9 @@
             this.btnGetLogFilePath = new System.Windows.Forms.Button();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnFacker = new System.Windows.Forms.Button();
+            this.tbxDivider = new System.Windows.Forms.TextBox();
+            this.btnM = new System.Windows.Forms.Button();
+            this.btnP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbxLogFilePath
@@ -72,11 +75,44 @@
             this.btnFacker.UseVisualStyleBackColor = true;
             this.btnFacker.Click += new System.EventHandler(this.btnFacker_Click);
             // 
+            // tbxDivider
+            // 
+            this.tbxDivider.Location = new System.Drawing.Point(300, 68);
+            this.tbxDivider.Name = "tbxDivider";
+            this.tbxDivider.ReadOnly = true;
+            this.tbxDivider.Size = new System.Drawing.Size(100, 21);
+            this.tbxDivider.TabIndex = 4;
+            this.tbxDivider.Text = "5";
+            this.tbxDivider.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnM
+            // 
+            this.btnM.Location = new System.Drawing.Point(241, 68);
+            this.btnM.Name = "btnM";
+            this.btnM.Size = new System.Drawing.Size(53, 21);
+            this.btnM.TabIndex = 5;
+            this.btnM.Text = "-";
+            this.btnM.UseVisualStyleBackColor = true;
+            this.btnM.Click += new System.EventHandler(this.btnM_Click);
+            // 
+            // btnP
+            // 
+            this.btnP.Location = new System.Drawing.Point(406, 68);
+            this.btnP.Name = "btnP";
+            this.btnP.Size = new System.Drawing.Size(53, 21);
+            this.btnP.TabIndex = 6;
+            this.btnP.Text = "+";
+            this.btnP.UseVisualStyleBackColor = true;
+            this.btnP.Click += new System.EventHandler(this.btnP_Click);
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnP);
+            this.Controls.Add(this.btnM);
+            this.Controls.Add(this.tbxDivider);
             this.Controls.Add(this.btnFacker);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.btnGetLogFilePath);
@@ -95,6 +131,9 @@
         private System.Windows.Forms.Button btnGetLogFilePath;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnFacker;
+        private System.Windows.Forms.TextBox tbxDivider;
+        private System.Windows.Forms.Button btnM;
+        private System.Windows.Forms.Button btnP;
     }
 }
 

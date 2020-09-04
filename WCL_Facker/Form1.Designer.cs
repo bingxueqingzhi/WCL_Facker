@@ -35,6 +35,9 @@
             this.tbxDivider = new System.Windows.Forms.TextBox();
             this.btnM = new System.Windows.Forms.Button();
             this.btnP = new System.Windows.Forms.Button();
+            this.pbProgress1 = new System.Windows.Forms.ProgressBar();
+            this.lblTxt1 = new System.Windows.Forms.Label();
+            this.lblProgress = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbxLogFilePath
@@ -105,11 +108,39 @@
             this.btnP.UseVisualStyleBackColor = true;
             this.btnP.Click += new System.EventHandler(this.btnP_Click);
             // 
+            // pbProgress1
+            // 
+            this.pbProgress1.Location = new System.Drawing.Point(13, 95);
+            this.pbProgress1.Name = "pbProgress1";
+            this.pbProgress1.Size = new System.Drawing.Size(759, 23);
+            this.pbProgress1.TabIndex = 7;
+            // 
+            // lblTxt1
+            // 
+            this.lblTxt1.AutoSize = true;
+            this.lblTxt1.Location = new System.Drawing.Point(239, 121);
+            this.lblTxt1.Name = "lblTxt1";
+            this.lblTxt1.Size = new System.Drawing.Size(59, 12);
+            this.lblTxt1.TabIndex = 8;
+            this.lblTxt1.Text = "Progress:";
+            // 
+            // lblProgress
+            // 
+            this.lblProgress.AutoSize = true;
+            this.lblProgress.Location = new System.Drawing.Point(304, 121);
+            this.lblProgress.Name = "lblProgress";
+            this.lblProgress.Size = new System.Drawing.Size(47, 12);
+            this.lblProgress.TabIndex = 9;
+            this.lblProgress.Text = "Pending";
+            // 
             // fmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblProgress);
+            this.Controls.Add(this.lblTxt1);
+            this.Controls.Add(this.pbProgress1);
             this.Controls.Add(this.btnP);
             this.Controls.Add(this.btnM);
             this.Controls.Add(this.tbxDivider);
@@ -134,6 +165,9 @@
         private System.Windows.Forms.TextBox tbxDivider;
         private System.Windows.Forms.Button btnM;
         private System.Windows.Forms.Button btnP;
+        private System.Windows.Forms.ProgressBar pbProgress1;
+        private System.Windows.Forms.Label lblTxt1;
+        private System.Windows.Forms.Label lblProgress;
     }
 }
 

@@ -56,7 +56,11 @@ namespace WCL_Facker
             MessageBox.Show("Total WCL Timespan: " + this.totalTimeSpan.ToString());
         }
 
-
+        /// <summary>
+        /// 读WCL文件
+        /// </summary>
+        /// <param name="logFilePath">WCL文件路径</param>
+        /// <returns></returns>
         private List<string> ReadWclFile(string logFilePath)
         {
             List<string> lines;
@@ -124,7 +128,7 @@ namespace WCL_Facker
         {
             if (btn.InvokeRequired)
             {
-                Action<Button, bool> action = (btn1, enable1) => btn.Enabled = enable1;
+                Action<Button, bool> action = (btn1, enable1) => btn1.Enabled = enable1;
                 btn.BeginInvoke(action, btn, enable);
             }
             else
@@ -139,7 +143,7 @@ namespace WCL_Facker
         private void btnM_Click(object sender, EventArgs e)
         {
             int divider = int.Parse(this.tbxDivider.Text);
-            if (divider <= 2)
+            if (divider <= 1)
             {
                 ;
             }

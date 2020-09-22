@@ -105,7 +105,7 @@ namespace WCL_Facker
             {
                 for (int i = 0; i < lineObjs.Count; i++)
                 {
-                    sw.WriteLine(lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " + lineObjs[i].Motion);
+                    sw.WriteLine(lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " + lineObjs[i].RawStr[2]);
                     if (this.pbProgress1.InvokeRequired)
                     {
                         Action<ProgressBar, int> action = this.ChangeProgressBar;

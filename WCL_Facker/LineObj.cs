@@ -17,9 +17,11 @@ namespace WCL_Facker
         public string TargetName { set; get; }//动作被执行人名字
         public string SpellID { set; get; }//法术ID
         public string SpellName { set; get; }//法术名称
+        public string[] RawStr { set; get; }//原始字符串
 
         public LineObj(string line)
         {
+            this.RawStr = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             string[] s = line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             this.Date = s[0];
             this.Time = s[1];

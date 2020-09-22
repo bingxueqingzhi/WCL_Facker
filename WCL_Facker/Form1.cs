@@ -45,7 +45,10 @@ namespace WCL_Facker
             List<string> lines = this.ReadWclFile(this.tbxLogFilePath.Text);
             for (int i = 0; i < lines.Count; i++)
             {
-                this.lineObjs.Add(new LineObj(lines[i]));
+                if (!lines[i].Contains("COMBAT_LOG_VERSION"))
+                {
+                    this.lineObjs.Add(new LineObj(lines[i]));
+                }
             }
             if (this.lineObjs != null)
             {
@@ -102,7 +105,7 @@ namespace WCL_Facker
             {
                 for (int i = 0; i < lineObjs.Count; i++)
                 {
-                    sw.WriteLine(lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " + lineObjs[i].ACT);
+                    sw.WriteLine(lineObjs[i].Date + ' ' + lineObjs[i].Time + "  " + lineObjs[i].Motion);
                     if (this.pbProgress1.InvokeRequired)
                     {
                         Action<ProgressBar, int> action = this.ChangeProgressBar;

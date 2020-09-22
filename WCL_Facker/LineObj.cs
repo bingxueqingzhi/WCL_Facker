@@ -10,13 +10,32 @@ namespace WCL_Facker
     {
         public string Date { set; get; }
         public string Time { set; get; }
-        public string ACT { set; get; }
+        public string Motion { set; get; }//动作
+        public string CasterID { set; get; }//动作执行人ID
+        public string CasterName { set; get; }//动作执行人名字
+        public string TargetID { set; get; }//动作被执行人ID
+        public string TargetName { set; get; }//动作被执行人名字
+        public string SpellID { set; get; }//法术ID
+        public string SpellName { set; get; }//法术名称
+
         public LineObj(string line)
         {
-            string[] s = line.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] s = line.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
             this.Date = s[0];
             this.Time = s[1];
-            this.ACT = s[2];
+            this.Motion = s[2];
+            this.CasterID = s[3];
+            this.CasterName = s[4];
+            if (s.Length >= 9)
+            {
+                this.TargetID = s[7];
+                this.TargetName = s[8];
+            }
+            if (s.Length >= 13)
+            {
+                this.SpellID = s[11];
+                this.SpellName = s[12];
+            }
         }
         public DateTime DT
         {
